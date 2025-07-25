@@ -1,0 +1,25 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Enter Name" formControlName="name">
+    <span *ngIf="profileForm.get('name')?.hasError('required')" style="color: red;">Name is required</span>
+    <span
+        *ngIf="profileForm.get('name')?.invalid && (profileForm.get('name')?.dirty || profileForm.get('name')?.touched)"
+        style="color: red;">Provider enter user name</span>
+    <br><br>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+    <span *ngIf="profileForm.get('password')?.hasError('required')" style="color: red;">Name is required</span>
+    <span
+        *ngIf="profileForm.get('password')?.invalid && (profileForm.get('password')?.dirty || profileForm.get('password')?.touched)"
+        style="color: red;">Provider enter user password</span>
+    <br>
+    <br>
+    <input type="text" placeholder="Enter Email" formControlName="email">
+    <span *ngIf="profileForm.get('email')?.hasError('required')" style="color: red;">Name is required</span>
+    <span
+        *ngIf="profileForm.get('email')?.invalid && (profileForm.get('email')?.dirty || profileForm.get('email')?.touched)"
+        style="color: red;">Provider enter user email</span>
+    <br>
+    <br>
+    <button>submit</button>
+    <button (click)="setValue()">set Value</button>
+
+</form>
